@@ -137,7 +137,6 @@ iptables
 # ships isolinux.bin in syslinux 6.x packaging
 isolinux
 ferm
-secrets
 kleopatra
 memlockd
 less
