@@ -50,7 +50,8 @@ if [ "$BASE_BRANCH" = stable ] ||
         ;;
     esac
     if version_was_released "$(version_in_changelog)" && git_on_a_tag; then
-        output_tagged_snapshot "$ARCHIVE" "$(version_in_changelog)"
+###        output_tagged_snapshot "$ARCHIVE" "$(version_in_changelog)"  # Commented to enable the build of released versions using time-based snapshots
+        output_time_based_snapshot "$ARCHIVE" "$RESOLVED_SERIAL"  # Comment to restore secure build of released versions using custom APT repo
     else
         if [ "$BASE_BRANCH" = stable ]; then
             version_was_released "$(previous_version_in_changelog)" ||
