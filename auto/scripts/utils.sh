@@ -79,7 +79,7 @@ git_base_branch_head() {
 branch_name_to_suite() {
     local branch="$1"
 
-    echo "$branch" | sed -e 's,[^.a-z0-9-],-,ig' | tr '[:upper:]' '[:lower:]'
+    echo "$branch" | sed -e 's,-custom\.[0-9]\+$,,ig' -e 's,[^.a-z0-9-],-,ig' | tr '[:upper:]' '[:lower:]'
 }
 
 fatal() {
